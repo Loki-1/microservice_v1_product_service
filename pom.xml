@@ -10,12 +10,14 @@
     </parent>
     <groupId>com.dailycodebuffer</groupId>
     <artifactId>product-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>product-service</name>
     <description>product-service</description>
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.7</spring-cloud.version>
+        <sonar.host.url>http://18.225.175.249:8082/</sonar.host.url>
+        <sonar.login>sqa_5f39c03ee1497c89ee265149ac654b3eea0057fd</sonar.login>
     </properties>
     <dependencies>
         <dependency>
@@ -65,6 +67,21 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <distributionManagement>
+
+            <repository>
+              <id>nexus</id>
+              <name>product-ms</name>
+              <url>http://18.225.175.249:8083/repository/product-ms/</url>
+            </repository>
+            
+            <!--<snapshotRepository>
+              <id>nexus</id>
+              <name>product-ms-snapshot</name>
+              <url>http://18.225.175.249:8083/repository/product-ms-snapshot/</url>
+            </snapshotRepository>-->
+            
+    </distributionManagement>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -92,6 +109,7 @@
                 </configuration>
             </plugin>
         </plugins>
+             <finalName>product_microservice</finalName>
     </build>
 
 </project>
