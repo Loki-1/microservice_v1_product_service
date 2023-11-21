@@ -38,4 +38,22 @@ stage('Uploading Artifacts Into Nexus Repo')
   sh  "mvn clean deploy"
    }
   }
-
+stage('Image Build for this application') {
+            steps {
+                // Build your Docker image
+                script {
+                    sh 'docker build -t lokeshnagam121/javaproject .'
+                }
+            }
+        }
+stage('pushing Image into docker-hub') {
+            steps {
+                // Build your Docker image
+                script {
+                    // Push the Docker image to the registry
+                    docker.withRegistry('', registryCredential) {
+                        docker.image("${dockerImage}:${IMAGE_TAG}").push()
+                    }
+                }
+            }
+        }
