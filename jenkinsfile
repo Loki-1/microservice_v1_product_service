@@ -11,4 +11,31 @@ environment {
         IMAGE_TAG = 'latest'
         registryCredential ='dockerhub'
 }
+stages
+{
+stage('Code Checkout')
+  {
+        steps{git credentialsId: 'github', url: 'https://github.com/Loki-1/microservice_v1_service_registry.git' }
+  }
+stage('Building code as a jar file')
+  {
+  steps
+  {
+  sh  "mvn clean package"
+  }
+  }
+stage('Executing SonarQube Report')
+  {
+  steps
+  {
+  sh  "mvn clean sonar:sonar"
+  }
+  }
+stage('Uploading Artifacts Into Nexus Repo')
+  {
+  steps
+   {
+  sh  "mvn clean deploy"
+   }
+  }
 
