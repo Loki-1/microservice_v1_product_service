@@ -18,6 +18,7 @@
         <spring-cloud.version>2021.0.7</spring-cloud.version>
         <sonar.host.url>http://18.118.149.214:8082/</sonar.host.url>
         <sonar.login>sqa_5f39c03ee1497c89ee265149ac654b3eea0057fd</sonar.login>
+        <sonar.java.binaries>target/classes</sonar.java.binaries>
     </properties>
     <dependencies>
         <dependency>
