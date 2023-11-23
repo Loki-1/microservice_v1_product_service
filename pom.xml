@@ -17,8 +17,8 @@
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.7</spring-cloud.version>
         <sonar.host.url>http://18.118.149.214:8082/</sonar.host.url>
-        <sonar.login>sqa_5f39c03ee1497c89ee265149ac654b3eea0057fd</sonar.login>
-        <sonar.java.binaries>target/classes</sonar.java.binaries>
+        <sonar.host.url>http://18.222.23.183:9092/</sonar.host.url>
+         <sonar.login>sqa_c0970cfdf6bafca83772bb1d4616e2fd9224bd5b</sonar.login>
     </properties>
     <dependencies>
         <dependency>
@@ -73,7 +73,7 @@
             <repository>
               <id>nexus</id>
               <name>product-ms</name>
-              <url>http://18.118.149.214:8083/repository/product-ms/</url>
+              <url>http://18.222.23.183:9091/repository/product-ms/</url>
             </repository>
             
             <!--<snapshotRepository>
@@ -110,7 +110,7 @@
                 </configuration>
             </plugin>
         </plugins>
-             <finalName>product_microservice</finalName>
+             <finalName>javaproject-product</finalName>
     </build>
 
 </project>
