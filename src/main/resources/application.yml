@@ -16,7 +16,7 @@ spring:
   application:
     name: PRODUCT-SERVICE
   config:
-    import: configserver:http://localhost:8001
+    import: configserver:http://localhost:8000
 
 
 
